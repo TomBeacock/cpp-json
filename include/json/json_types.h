@@ -24,6 +24,8 @@ class Value {
     Value(Object &&obj);
     Value(Array &&arr);
     Value(String &&str);
+    Value(std::string_view str);
+    Value(const Char *str);
     Value(Float f);
     Value(Int i);
     Value(Bool b);
@@ -36,6 +38,8 @@ class Value {
 
     template <typename T>
     inline T *get_if();
+
+    std::string to_string() const;
 
   private:
     std::variant<Null, Bool, Int, Float, String, Array, Object> data;

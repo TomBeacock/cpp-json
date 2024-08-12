@@ -18,7 +18,8 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(tests
-	"json_parser.cpp"
+	"test_json_types.cpp"
+	"test_json_parser.cpp"
 )
 target_link_libraries(tests PRIVATE cpp-json GTest::gtest_main)
 set_target_properties(tests PROPERTIES CXX_STANDARD 23 CXX_STANDARD_REQUIRED ON)
